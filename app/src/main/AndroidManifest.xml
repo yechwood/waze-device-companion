@@ -10,6 +10,7 @@
 
         <activity
             android:name=".DialActivity"
+            android:theme="@style/Theme.WazeIntentHandler.Transparent"
             android:exported="true"
             android:noHistory="false"
             android:excludeFromRecents="true">
