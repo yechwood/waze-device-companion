@@ -26,8 +26,8 @@ class DialActivity : AppCompatActivity() {
 
     private fun configureTransparentWindow() {
         window.setBackgroundDrawableResource(android.R.color.transparent)
-        window.setDimAmount(0f)
-        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        window.attributes = window.attributes.apply { dimAmount = 0.35f }
     }
 
     private fun showNumber(uri: Uri?) {
