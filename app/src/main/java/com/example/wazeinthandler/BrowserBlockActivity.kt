@@ -1,7 +1,9 @@
 package com.example.wazeinthandler
 
+import android.graphics.Color
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.view.Gravity
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,22 +11,26 @@ class BrowserBlockActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val root = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(28, 24, 28, 24)
-            setBackgroundColor(0xFFFFFFFF.toInt())
+        val root = FrameLayout(this).apply {
+            setBackgroundColor(Color.WHITE)
         }
 
         val message = TextView(this).apply {
             text = "Waze devices don't have browsing."
             textSize = 20f
-            setTextColor(0xFF222222.toInt())
+            setTextColor(Color.rgb(34, 34, 34))
+            gravity = Gravity.CENTER
         }
 
-        root.addView(message, LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        ))
+        root.addView(
+            message,
+            FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.WRAP_CONTENT,
+                Gravity.CENTER
+            )
+        )
+
         setContentView(root)
     }
 }
